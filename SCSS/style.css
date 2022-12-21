@@ -751,8 +751,8 @@ body {
   margin-bottom: 3.125rem;
 }
 .body-wave__button.element-show {
-  -webkit-animation: 1s scale 1.4s forwards;
-          animation: 1s scale 1.4s forwards;
+  -webkit-animation: 1s scale 1s forwards;
+          animation: 1s scale 1s forwards;
 }
 .body-wave__button:hover {
   padding: 0.8125rem 2.0625rem 0.8125rem 2.0625rem;
@@ -885,6 +885,8 @@ body {
 .story {
   padding-top: 9.375rem;
   padding-bottom: 1.25rem;
+  position: relative;
+  z-index: 2;
 }
 @media (max-width: 650px) {
   .story {
@@ -1051,16 +1053,24 @@ body {
   width: 100%;
 }
 .fullscreen__img {
-  opacity: 0;
-  max-height: 1px;
-  width: 100vw;
-  -o-object-fit: cover;
-     object-fit: cover;
+  position: relative;
+  z-index: 2;
+  min-height: 320px;
+  background-image: url(../img/bg/gitare.png);
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
-.fullscreen__img.element-show {
-  max-height: 240px;
-  transition: 1s;
-  opacity: 1;
+@media (max-width: 768px) {
+  .fullscreen__img {
+    min-height: 200px;
+  }
+}
+@media (max-width: 550px) {
+  .fullscreen__img {
+    min-height: 100px;
+  }
 }
 
 .roadmap {

@@ -766,7 +766,7 @@ body.lock{
 
 		&__button {
 			&.element-show{
-				animation: 1s scale 1.4s forwards;
+				animation: 1s scale 1s forwards;
 			}
 			opacity: 0;
 			transform: scale(0.8);
@@ -916,6 +916,8 @@ body.lock{
 .story {
 		padding-top: rem(150, );
 		padding-bottom: rem(20, );
+		position: relative;
+		z-index: 2;
 		@media (max-width:650px){
 			padding-top: rem(50, );
 			padding-bottom: rem(20, );
@@ -1083,18 +1085,22 @@ body.lock{
 
 		&__container {
 			width: 100%;
-			
 		}
 		&__img{
-			&.element-show{
-				max-height: 240px;
-				transition: 1s;
-				opacity: 1;
+			position: relative;
+			z-index: 2;
+			min-height: 320px;
+			background-image: url(../img/bg/gitare.png);
+			background-position: center;
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-size: contain;		
+			@media (max-width: 768px) {
+				min-height: 200px;
 			}
-			opacity: 0;
-			max-height: 1px;
-			width: 100vw;
-			object-fit: cover;
+			@media (max-width: 550px){
+				min-height: 100px;
+			}
 		}
 }
 // 
