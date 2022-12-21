@@ -82,19 +82,6 @@ $(window).scroll(function () {
 	if (top < 25) $(".header__container").removeClass('fixed');
 	else $(".header__container").addClass('fixed');
 });
-var header = $('.header__container'),
-	scrollPrev = 0;
-
-$(window).scroll(function () {
-	var scrolled = $(window).scrollTop();
-
-	if (scrolled > 100 && scrolled > scrollPrev) {
-		header.addClass('out');
-	} else {
-		header.removeClass('out');
-	}
-	scrollPrev = scrolled;
-});
 $(document).ready(function () {
 	$('.spoiler-questions__title').click(function (event) {
 		$(this).toggleClass('active').next().slideToggle(300)
@@ -112,7 +99,7 @@ let options = {
 	threshold: [0.5]
 };
 let observer = new IntersectionObserver(onEntry, options);
-let elements = document.querySelectorAll('.img-wave__title,.img-wave__subtitle,.img-wave__img,.body-wave__title,.body-wave__text,.body-wave__button,.artist-swiper,.story__main-title,.story__title,.fullscreen__img,.roadmap__card,.logoholder__title,.logoholder__item,.questions__title,.questions__img,.spoiler-questions__title,.team,.team-slide__item,.discord__title,.discord__text,.discord__button,.discord__img,.footer__logo,.footer__column-1,.footer__column-2,.footer__column-3,swiper-slide__b-title,.links-body__link');
+let elements = document.querySelectorAll('.img-wave__title,.img-wave__subtitle,.img-wave__img,.body-wave__title,.body-wave__text,.body-wave__button,.artist-swiper,.story__main-title,.story__title,.fullscreen__img,.roadmap__card,.logoholder__title,.logoholder__item,.questions__title,.questions__img,.spoiler-questions__title,.team,.team-slide__item,.discord__title,.discord__text,.discord__button,.discord__img,.footer__logo,.footer__column-1,.footer__column-2,.footer__column-3,swiper-slide__b-title,.links-body__link,.block-story');
 
 for (let elm of elements) {
 	observer.observe(elm);
@@ -137,6 +124,7 @@ function openCity(evt, cityName) {
 	document.getElementById(cityName).style.display = "flex";
 	evt.currentTarget.className += " active";
 }
+document.getElementById("defaultOpen").click();
 function slowScroll(id) {
 	var offset = 100;
 	$('html, body').animate({

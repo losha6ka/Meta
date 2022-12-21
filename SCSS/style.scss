@@ -971,11 +971,11 @@ body.lock{
 			font-family: 'DM Mono';
 			margin-bottom: rem(25, );
 			color: #FFFFFF;			
-			transition: 0.3s;
+			transition: 0.5s;
 			background: none;
 			&.active{
 				color: #8DFD1B;
-				transition: 0.3s;
+				transition: 0.5s;
 				width: 100%;
 				background-color: #222222;
 			}
@@ -1006,19 +1006,23 @@ body.lock{
 		}
 
 		// .story__block-1
-
 		&__block-1 {
 			display: none;
 			transition: 0.3s;
 			padding: rem(60, );
 			background-color: #222222;
 			@include adaptiv-value(padding, 60, 10,0);
+
 		}
 }
 .block-story {
 		
 		// .block-story__img
-		
+		&.element-show{
+			animation: 0.5s scale forwards;
+		}
+		opacity: 0;
+		transform: scale(0.99);
 		&__img {
 			position: relative;
 			z-index: 2;
